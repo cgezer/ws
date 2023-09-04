@@ -2,8 +2,6 @@ package com.hoaxify.ws.error;
 
 import java.util.Date;
 import java.util.Map;
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
