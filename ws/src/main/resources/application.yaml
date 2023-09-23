@@ -1,7 +1,19 @@
+
+
+
+#spring:
+#  datasource:
+#   url: jdbc:h2:mem:testdb
+#   username: sa
+#  jpa: 
+#    hibernate: 
+#      ddl-auto: update
 spring:
   datasource:
-   url: jdbc:h2:./devdb
-   username: sa
-  jpa: 
-    hibernate: 
-      ddl-auto: update
+    generate-unique-name: false
+  jpa:
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
