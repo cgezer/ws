@@ -12,7 +12,7 @@ import jakarta.validation.Payload;
 @Retention(RUNTIME)
 @Constraint(validatedBy = { UniqueUsernameValidator.class })
 public @interface UniqueUsername {
-	String message() default "Username must be unique";
+	String message() default "{hoaxify.contraint.username.UniqueUsername.message}";
 
 	Class<?>[] groups() default { };
 

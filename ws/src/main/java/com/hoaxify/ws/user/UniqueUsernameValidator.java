@@ -8,7 +8,6 @@ public class UniqueUsernameValidator implements ConstraintValidator<UniqueUserna
 	
 	@Autowired
 	UserRepository userRepository;
-
 	
 	@Override
 	public boolean isValid(String username, ConstraintValidatorContext context) {
