@@ -1,5 +1,7 @@
 package com.hoaxify.ws.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,8 +31,10 @@ public class User {
 	@NotNull
 	@Size(min=8,max=255)
 	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).*$", message = "{hoaxify.constraint.password.Pattern.message}")
+	@JsonIgnore
 	private String password;
-
+	
+	private String image;
 
 	
 }
