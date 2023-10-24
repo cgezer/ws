@@ -1,6 +1,5 @@
 package com.hoaxify.ws.user;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -10,14 +9,15 @@ public class UserService {
 	UserRepository userRepository;
 
 	PasswordEncoder passwordEncoder;
-	public UserService(UserRepository userRepository) {
+	
+	public UserService(UserRepository userRepository, PasswordEncoder passworEncoder) {
 		this.userRepository = userRepository;
-		this.passwordEncoder=new BCryptPasswordEncoder();
+		this.passwordEncoder = passworEncoder;
 	}
 
-	public void save(User user) {
-		user.setPassword(this.passwordEncoder.encode(user.getPassword()));
-		userRepository.save(user);
+	public void save(Users users) {
+		users.setPassword(this.passwordEncoder.encode(users.getPassword()));
+		userRepository.save(users);
 		
 	}
 }

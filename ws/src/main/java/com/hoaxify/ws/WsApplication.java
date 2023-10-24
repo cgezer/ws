@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
-import com.hoaxify.ws.user.User;
+import com.hoaxify.ws.user.Users;
 import com.hoaxify.ws.user.UserService;
 
 @SpringBootApplication
@@ -19,7 +19,7 @@ public class WsApplication {
 	@Bean
 	CommandLineRunner createInitialUsers(UserService userService) {
 		return (args) -> {
-			User user = new User();
+			Users user = new Users();
 			user.setUsername("user1");
 			user.setDisplayName("display");
 			user.setPassword("P4ssword");
